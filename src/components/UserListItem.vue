@@ -1,8 +1,4 @@
 <template>
-  <!-- <li class="list-group-item media" @click="onVideoSelect">
-    <img class="mr-3" :src="thumbnailUrl" />
-    <div class="media-body">{{ video.snippet.title }}</div>
-  </li>-->
   <div class="media">
     <div v-html="identicon" />
     <div class="media-body row">
@@ -13,7 +9,7 @@
       </div>
       <div class="col-md-4">
         <b>
-          <button type="button" class="btn btn-info">Edit</button>
+          <button type="button" class="btn btn-info" @click="$router.push(`/edit/${user.id}`)">Edit</button>
           <button type="button" class="btn btn-danger" @click="onDeleteSelect">Delete</button>
         </b>
       </div>
@@ -22,6 +18,7 @@
 </template>
 
 <script>
+import jdenticon from "jdenticon";
 export default {
   name: "VideoListItem",
   props: {
@@ -50,7 +47,7 @@ export default {
   margin: 25px 0 25px 0;
   cursor: pointer;
   border: 1px solid #ddd;
-  border-radius: 8em;
+  border-radius: 15px;
 }
 .media:hover {
   background-color: #ddd;

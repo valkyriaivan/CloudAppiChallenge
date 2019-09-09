@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-9 custom-container">
+  <div class="col-md-12 custom-container">
     <h3 class="title">List of users</h3>
     <hr />
     <UserListItem
@@ -20,8 +20,8 @@ export default {
   components: {
     UserListItem
   },
-  props: {
-    userList: Array
+  data() {
+    return { userList: [] };
   },
   methods: {
     async onDeleteSelect(id) {
@@ -42,14 +42,23 @@ export default {
           keepOnHover: true
         });
       }
+    },
+    async onMounted() {
+      try {
+        let rep = await axios.get(
+          "https://my-user-manager.herokuapp.com/users"
+        );
+        this.userList = rep.data;
+      } catch (err) {
+        console.log(err);
+      }
     }
   },
   mounted() {
-    console.log(this.userList);
+    this.onMounted();
   }
 };
 </script>
 
 <style scoped>
-
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-9 custom-container">
+  <div class="col-md-12 custom-container">
     <h3 class="title">Create a new user</h3>
     <hr />
     <form>
@@ -29,6 +29,7 @@
         <button type="button" class="btn btn-outline-success" @click="onCreate">Create User</button>
       </div>
     </form>
+    <p style="color: #ccc">In order to prevent the 405 error, button must be clicked 2 times.</p>
   </div>
 </template>
 
@@ -60,13 +61,32 @@ export default {
         });
         return;
       }
-      let rep = await axios.post(
-        "https://my-user-manager.herokuapp.com/users",
-        {
-          name: this.userName,
-          email: this.userEmail
+      try {
+        let rep = await axios.post(
+          "https://my-user-manager.herokuapp.com/users",
+          JSON.stringify({
+            name: this.userName,
+            email: this.userEmail
+          }),
+          {
+            headers: {
+              "Content-Type": "application/json"
+            }
+          }
+        );
+        if (rep.status === 201) {
+          console.log(rep);
+          this.$toasted.success(`User created with id: ${rep.data.id}!`, {
+            duration: 3000,
+            keepOnHover: true
+          });
         }
-      );
+      } catch (err) {
+        this.$toasted.error(err.response.statusText || "Request failed", {
+          duration: 3000,
+          keepOnHover: true
+        });
+      }
     }
   }
 };
