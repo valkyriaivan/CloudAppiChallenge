@@ -6,9 +6,11 @@ import UserList from "./components/UserList";
 import UserCreation from "./components/UserCreation";
 import SearchUserById from "./components/SearchUserById";
 import EditUser from "./components/EditUser";
+require("./css/main.css");
 
 Vue.use(Toasted);
 Vue.use(VueRouter);
+
 const router = new VueRouter({
   mode: "history",
   routes: [

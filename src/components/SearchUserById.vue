@@ -83,15 +83,4 @@ export default {
 </script>
 
 <style scoped>
-.form-control {
-  margin: 0 15px 0 15px;
-}
-.form-inline {
-  margin-bottom: 25px;
-}
-@media (max-width: 575px) {
-  .form-control {
-    margin: 15px 0 15px 0;
-  }
-}
 </style>

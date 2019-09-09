@@ -15,11 +15,6 @@ export default {};
 </script>
 
 <style scoped>
-nav {
-  background-color: #eee;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
-  height: 56px;
-}
 a {
   text-decoration: none;
   color: black;

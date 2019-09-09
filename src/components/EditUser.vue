@@ -160,15 +160,4 @@ export default {
   width: 100%;
   margin-bottom: 15px;
 }
-.form-inline .form-control {
-  margin: 0 15px 0 15px;
-}
-.form-inline {
-  margin-bottom: 25px;
-}
-@media (max-width: 575px) {
-  .form-inline .form-control {
-    margin: 15px 0 15px 0;
-  }
-}
 </style>
