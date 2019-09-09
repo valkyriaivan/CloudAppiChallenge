@@ -38,20 +38,6 @@ export default {
 </script>
 
 <style scoped>
-.media-body {
-  line-height: 54px;
-  padding-left: 15px;
-}
-.media {
-  padding: 10px;
-  margin: 25px 0 25px 0;
-  cursor: pointer;
-  border: 1px solid #ddd;
-  border-radius: 15px;
-}
-.media:hover {
-  background-color: #ddd;
-}
 .btn {
   margin: 0 10px 0 10px;
 }
