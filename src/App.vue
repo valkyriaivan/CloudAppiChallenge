@@ -15,23 +15,14 @@
 </template>
 
 <script>
-import axios from "axios";
-import Header from "./components/Header";
-import UserList from "./components/UserList";
-import SelectMenu from "./components/SelectMenu";
-import UserCreation from "./components/UserCreation";
-import SearchUserById from "./components/SearchUserById";
-import EditUser from "./components/EditUser";
+import SelectMenu from "./components/SelectMenu"
+import Header from "./components/Header"
 
 export default {
   name: "App",
   components: {
-    Header,
-    UserList,
     SelectMenu,
-    UserCreation,
-    SearchUserById,
-    EditUser
+    Header
   }
 };
 </script>

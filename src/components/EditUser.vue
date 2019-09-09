@@ -141,7 +141,6 @@ export default {
         this.searchInput = this.$route.params.id;
         this.onSearch();
       }
-      // if(this.$route.params.id)
     }
   },
   mounted() {
@@ -151,13 +150,4 @@ export default {
 </script>
 
 <style scoped>
-.button-container .btn {
-  width: 50%;
-  text-align: center;
-  font-weight: bold;
-}
-.button-container {
-  width: 100%;
-  margin-bottom: 15px;
-}
 </style>

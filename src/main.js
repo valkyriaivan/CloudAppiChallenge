@@ -33,9 +33,14 @@ const router = new VueRouter({
     {
       path: "/edit",
       component: EditUser
+    },
+    {
+      path: "*", // In case of 404
+      component: UserList
     }
   ]
 });
+
 new Vue({
   el: "#app",
   router,

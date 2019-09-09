@@ -20,7 +20,7 @@
 <script>
 import jdenticon from "jdenticon";
 export default {
-  name: "VideoListItem",
+  name: "UserListItem",
   props: {
     user: Object
   },

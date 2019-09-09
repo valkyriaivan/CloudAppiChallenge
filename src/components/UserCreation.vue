@@ -29,7 +29,7 @@
         <button type="button" class="btn btn-outline-success" @click="onCreate">Create User</button>
       </div>
     </form>
-    <p style="color: #ccc">In order to prevent the 405 error, button must be clicked 2 times.</p>
+    <p>In order to prevent the 405 error server-side, request must be sent twice</p>
   </div>
 </template>
 
@@ -75,7 +75,6 @@ export default {
           }
         );
         if (rep.status === 201) {
-          console.log(rep);
           this.$toasted.success(`User created with id: ${rep.data.id}!`, {
             duration: 3000,
             keepOnHover: true
@@ -93,13 +92,7 @@ export default {
 </script>
 
 <style scoped>
-.btn {
-  width: 50%;
-  text-align: center;
-  font-weight: bold;
-}
-.button-container {
-  width: 100%;
-  margin-bottom: 15px;
+p {
+color: #ccc
 }
 </style>

@@ -16,7 +16,7 @@ import axios from "axios";
 import UserListItem from "./UserListItem";
 
 export default {
-  name: "VideoList",
+  name: "UserList",
   components: {
     UserListItem
   },
@@ -50,7 +50,7 @@ export default {
         );
         this.userList = rep.data;
       } catch (err) {
-        console.log(err);
+        this.userList = []
       }
     }
   },
