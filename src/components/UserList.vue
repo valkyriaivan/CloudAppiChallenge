@@ -14,6 +14,7 @@
 <script>
 import axios from "axios";
 import UserListItem from "./UserListItem";
+import { setTimeout } from 'timers';
 
 export default {
   name: "UserList",
@@ -50,7 +51,7 @@ export default {
         );
         this.userList = rep.data;
       } catch (err) {
-        this.userList = []
+        setTimeout(()=>{ this.onMounted() }, 300); // Relaunch onMounted until page is loaded
       }
     }
   },
